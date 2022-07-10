@@ -1,0 +1,327 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    position: relative;
+    margin: 0;
+}
+
+body p {
+    font-size: 18px;
+    background-color: var(--almost-white);
+}
+
+:root {
+    --almost-white: hsl(0, 0%, 98%);
+    --medium-gray: hsl(0, 0%, 41%);
+    --almost-black: hsl(0, 0%, 8%);
+}
+
+.drop {
+    display: flex;
+    align-items: center;
+}
+
+.navList, .icon {
+    margin-right: 5px;
+}
+
+.navIcon img, .icon img, .logo img {
+    display: block;
+    cursor: pointer;
+}
+
+.logo img {
+    padding: 10px;
+}
+
+.dropdown {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+nav ul, .account ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.company li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mainList, .account ul {
+    display: flex;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    padding-top: 10px;
+}
+
+.logo {
+    width: 10%;
+}
+
+nav {
+    width: 60%;
+}
+
+.account {
+    width: 30%;
+}
+
+.features, .company {
+    display: none;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.features {
+    position: absolute;
+    top: 50px;
+    left: 105px;
+}
+
+.company {
+    position: absolute;
+    top: 50px;
+}
+
+.mainList li {
+    margin-right: 25px;
+    cursor: pointer;
+    padding: 10px;
+    color: var(--medium-gray);
+}
+
+.features li, .company li {
+    margin: 0;
+}
+
+.account ul li {
+    margin-left: 25px;
+    padding: 10px;
+    color: var(--medium-gray);
+    cursor: pointer;
+}
+
+.account ul li:hover {
+    color: var(--almost-black);
+}
+
+.account ul {
+    justify-content: flex-end;
+}
+
+.account ul li:nth-of-type(2) {
+    border: 1px solid var(--medium-gray);
+    border-radius: 10px;
+}
+
+.account ul li:nth-of-type(2):hover {
+    border: 1px solid var(--almost-black);
+}
+
+.mainList li:hover .features, .mainList li:hover .company {
+    display: block;
+}
+
+.mainList li:hover {
+    color: var(--almost-black);
+}
+
+.drop::after {
+    content: url("images/icon-arrow-down.svg");
+}
+
+.mainList li:hover .drop::after {
+    content: url("images/icon-arrow-up.svg");
+}
+
+.burger {
+    display: none;
+}
+
+.back {
+    display: none;
+}
+
+main {
+    width: 76%;
+    margin: auto;
+    display: flex;
+}
+
+.hero {
+    width: 40%;
+}
+
+.hero img {
+    width: 100%;
+}
+
+.intro {
+    width: 60%;
+}
+
+.intro h1 {
+    font-size: 65px;
+    margin-right: 30%;
+}
+
+.intro p {
+    font-size: 15px;
+    color: var(--medium-gray);
+    background-color: initial;
+    line-height: 25px;
+}
+
+.intro span {
+    padding: 10px;
+    background-color: var(--almost-black);
+    color: var(--almost-white);
+    border-radius: 5px;
+    margin-top: 30px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.intro span:hover {
+    background-color: var(--almost-white);
+    color: var(--almost-black);
+    border: 1px solid var(--almost-black);
+}
+
+.images img {
+    display: block;
+    width: 100%;
+    
+}
+
+.images {
+    display: flex;
+    width: 65%;
+    justify-content: space-between;
+    margin-top: 50px;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    nav, .account {
+        display: none;
+    }
+    .logo {
+        width: 50%;
+    }
+    .burger  {
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+    }
+
+    .show div {
+        width: 50vw;
+        height: 100vh;
+        background-color: var(--almost-white);
+        z-index: -1;
+        text-align: right;
+    }
+
+    .burger img {
+        margin-top: 10px;
+        margin-right: 20px;
+        padding: 10px;
+    }
+    .responsive {
+        display: block;
+        margin-left: 44vw;
+        z-index: 1;   
+    }
+    .mainList, .account ul {
+        flex-direction: column;
+        z-index: 1;
+    }
+    .responsive .mainList {
+        width: 50vw;
+    }
+    .mainList li {
+        margin-right: 0px;
+    }
+    .account ul {
+        width: 50vw;
+    }
+    .account ul li {
+        margin-left: 0px;
+        text-align: center;
+    }
+    .account ul li:nth-of-type(2) {
+        margin: 0px 10px;
+    }
+    .features, .company {
+        position: initial;
+        box-shadow: none;
+        background-color: initial;
+    }
+    header {
+        flex-direction: column;
+        position: absolute;
+    }
+    .back {
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--almost-black);
+        opacity: 0.5;
+        z-index: -2;
+        position: absolute;
+        top: 0;
+        left: 0;
+    } 
+    main {
+        flex-direction: column-reverse;
+        width: 100%;
+        padding-top: 100px;
+    }
+    .intro, .hero {
+        width: 100%;
+    }
+    .hero {
+        z-index: -2;
+    }
+    .intro {
+        text-align: center;
+    }
+    .intro h1 {
+        font-size: 32px;
+        margin-right: 0;
+    }
+    .images {
+        width: 100%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        padding: 10px;
+    }
+    .images img {
+        width: 80%;
+        margin: auto;
+    }
+    .intro p {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
